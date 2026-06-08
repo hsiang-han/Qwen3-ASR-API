@@ -1,0 +1,24 @@
+name: qwen3-asr-api
+services:
+  qwen3-asr-api:
+    image: ghcr.io/hsiang-han/qwen3-asr-api:latest
+    container_name: qwen3-asr-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:80"
+    volumes:
+      - /mnt/user/appdata/qwen3-asr-api/models:/root/.cache/huggingface
+    environment:
+      - MODEL_ID=Qwen/Qwen3-ASR-0.6B
+      - GPU_MEMORY_UTILIZATION=0.8
+    shm_size: "4gb"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: unless-stopped

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>qwen3-asr-api</Name>
+  <Repository>ghcr.io/hsiang-han/qwen3-asr-api:latest</Repository>
+  <Registry>https://ghcr.io</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/hsiang-han/qwen3-asr-api/issues</Support>
+  <Project>https://github.com/hsiang-han/qwen3-asr-api</Project>
+  <Overview>Pure OpenAI-compatible Speech-to-Text API powered by Qwen3-ASR via vLLM. State-of-the-art Chinese (22 dialects), English, and 50+ languages. No bloat — just the model and API. Switch between 0.6B (~2-3GB VRAM) and 1.7B (~4-6GB VRAM) via MODEL_ID. CUDA 12.8 (Blackwell/Ada). First start downloads model. Requires NVIDIA GPU with driver 570+.</Overview>
+  <Category>Productivity: Tools:</Category>
+  <WebUI>http://[IP]:[PORT:8000]/docs</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/hsiang-han/unraid_templates/main/templates/qwen3-asr-api.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/hsiang-han/unraid_templates/main/assets/qwen3-asr-api-icon.png</Icon>
+  <ExtraParams>--gpus all --shm-size=4g</ExtraParams>
+
+  <Config Name="API Port" Target="80" Default="8000" Mode="tcp" Description="OpenAI-compatible API port. Swagger docs at /docs" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+
+  <Config Name="Model Cache" Target="/root/.cache/huggingface" Default="/mnt/user/appdata/qwen3-asr-api/models" Mode="rw" Description="Model download cache. Persists across container recreates (~1-3GB)." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/qwen3-asr-api/models</Config>
+
+  <Config Name="Model ID" Target="MODEL_ID" Default="Qwen/Qwen3-ASR-0.6B" Mode="" Description="Qwen/Qwen3-ASR-0.6B (fast, ~2-3GB VRAM) or Qwen/Qwen3-ASR-1.7B (accurate, ~4-6GB VRAM). Restart required after change." Type="Variable" Display="always" Required="true" Mask="false">Qwen/Qwen3-ASR-0.6B</Config>
+
+  <Config Name="GPU Memory Utilization" Target="GPU_MEMORY_UTILIZATION" Default="0.8" Mode="" Description="Fraction of GPU memory to allocate (0.0-1.0). Lower if sharing GPU with other containers." Type="Variable" Display="always" Required="false" Mask="false">0.8</Config>
+
+  <Config Name="NVIDIA Visible Devices" Target="NVIDIA_VISIBLE_DEVICES" Default="all" Mode="" Description="GPU selection (all, 0, 1, etc.)" Type="Variable" Display="advanced" Required="false" Mask="false">all</Config>
+
+  <Config Name="NVIDIA Driver Capabilities" Target="NVIDIA_DRIVER_CAPABILITIES" Default="compute,utility" Mode="" Description="NVIDIA driver capabilities" Type="Variable" Display="advanced" Required="false" Mask="false">compute,utility</Config>
+</Container>
