@@ -6,7 +6,8 @@ RUN chmod +x /entrypoint.sh
 ENV MODEL_ID=Qwen/Qwen3-ASR-0.6B \
     HOST=0.0.0.0 \
     PORT=80 \
-    GPU_MEMORY_UTILIZATION=0.8
+    GPU_MEMORY_UTILIZATION=0.8 \
+    MAX_MODEL_LEN=8192
 
 EXPOSE 80
 

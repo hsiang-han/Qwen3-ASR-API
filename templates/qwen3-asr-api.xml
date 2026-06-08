@@ -24,6 +24,8 @@
 
   <Config Name="GPU Memory Utilization" Target="GPU_MEMORY_UTILIZATION" Default="0.8" Mode="" Description="Fraction of GPU memory to allocate (0.0-1.0). Lower if sharing GPU with other containers." Type="Variable" Display="always" Required="false" Mask="false">0.8</Config>
 
+  <Config Name="Max Model Length" Target="MAX_MODEL_LEN" Default="8192" Mode="" Description="Max sequence length for KV cache. 8192 supports ~10min audio. Lower to save VRAM, raise for very long audio." Type="Variable" Display="advanced" Required="false" Mask="false">8192</Config>
+
   <Config Name="NVIDIA Visible Devices" Target="NVIDIA_VISIBLE_DEVICES" Default="all" Mode="" Description="GPU selection (all, 0, 1, etc.)" Type="Variable" Display="advanced" Required="false" Mask="false">all</Config>
 
   <Config Name="NVIDIA Driver Capabilities" Target="NVIDIA_DRIVER_CAPABILITIES" Default="compute,utility" Mode="" Description="NVIDIA driver capabilities" Type="Variable" Display="advanced" Required="false" Mask="false">compute,utility</Config>
