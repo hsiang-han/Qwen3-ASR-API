@@ -4,7 +4,7 @@
 
 纯净的 OpenAI 兼容语音转文字 API，基于 [Qwen3-ASR](https://github.com/QwenLM/Qwen3-ASR)。
 
-无多余组件、无 NGINX、无声纹数据库——仅通过 vLLM 提供模型推理和 OpenAI 兼容接口。
+无多余组件、仅通过 vLLM 提供模型推理和 OpenAI 兼容接口。
 
 ## 相比官方镜像的改进
 
