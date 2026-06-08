@@ -1,4 +1,4 @@
-# qwen3-asr-api
+# Qwen3-ASR-API
 
 Pure OpenAI-compatible Speech-to-Text API powered by [Qwen3-ASR](https://github.com/QwenLM/Qwen3-ASR).
 
@@ -56,7 +56,7 @@ Switch by changing `MODEL_ID` env var and restarting container.
 ## Unraid Install
 
 1. Add template repo: `https://github.com/hsiang-han/unraid_templates`
-2. Find "qwen3-asr-api" in Community Applications
+2. Find "Qwen3-ASR-API" in Community Applications
 3. Configure MODEL_ID and GPU settings
 4. Start — first launch downloads model, subsequent starts are fast
 

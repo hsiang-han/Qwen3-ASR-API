@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>qwen3-asr-api</Name>
+  <Name>Qwen3-ASR-API</Name>
   <Repository>ghcr.io/hsiang-han/qwen3-asr-api:latest</Repository>
   <Registry>https://ghcr.io</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/hsiang-han/qwen3-asr-api/issues</Support>
-  <Project>https://github.com/hsiang-han/qwen3-asr-api</Project>
+  <Support>https://github.com/hsiang-han/Qwen3-ASR-API/issues</Support>
+  <Project>https://github.com/hsiang-han/Qwen3-ASR-API</Project>
   <Overview>Pure OpenAI-compatible Speech-to-Text API powered by Qwen3-ASR via vLLM. State-of-the-art Chinese (22 dialects), English, and 50+ languages. No bloat — just the model and API. Switch between 0.6B (~2-3GB VRAM) and 1.7B (~4-6GB VRAM) via MODEL_ID. CUDA 12.8 (Blackwell/Ada). First start downloads model. Requires NVIDIA GPU with driver 570+.</Overview>
   <Category>Productivity: Tools:</Category>
   <WebUI>http://[IP]:[PORT:8000]/docs</WebUI>
