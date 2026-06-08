@@ -8,7 +8,7 @@
 
 ## 相比官方镜像的改进
 
-官方 `qwenllm/qwen3-asr` Docker 镜像没有 entrypoint（启动后进入交互式 shell）。本项目添加了：
+官方 `qwenllm/qwen3-asr` Docker 镜像没有 entrypoint（启动后进入交互式 shell），无法在 Unraid 等平台中直接使用。本项目添加了 entrypoint 使其开箱即用，同时兼容任何 Docker 环境：
 - 容器启动自动运行 `qwen-asr-serve`
 - 通过环境变量切换模型（无需重新构建镜像）
 - GPU 显存控制
