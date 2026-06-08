@@ -1,5 +1,7 @@
 # Qwen3-ASR-API
 
+[English](README.md) | [中文](README_zh.md)
+
 Pure OpenAI-compatible Speech-to-Text API powered by [Qwen3-ASR](https://github.com/QwenLM/Qwen3-ASR).
 
 No extra services, no NGINX, no voiceprint database — just the model served via vLLM with an OpenAI-compatible endpoint.
