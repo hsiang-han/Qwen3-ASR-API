@@ -9,7 +9,7 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/hsiang-han/Qwen3-ASR-API/issues</Support>
   <Project>https://github.com/hsiang-han/Qwen3-ASR-API</Project>
-  <Overview>Pure OpenAI-compatible Speech-to-Text API powered by Qwen3-ASR via vLLM. State-of-the-art Chinese (22 dialects), English, and 50+ languages. No bloat — just the model and API. Switch between 0.6B (~2-3GB VRAM) and 1.7B (~4-6GB VRAM) via MODEL_ID. CUDA 12.8 (Blackwell/Ada). First start downloads model. Requires NVIDIA GPU with driver 570+.</Overview>
+  <Overview>Pure OpenAI-compatible Speech-to-Text API powered by Qwen3-ASR via vLLM. State-of-the-art Chinese (22 dialects), English, and 50+ languages. No bloat — just the model and API. Switch between 0.6B (~2-3GB VRAM) and 1.7B (~4-6GB VRAM) via MODEL_ID. CUDA 12.8 (Blackwell/Ada). First start downloads model from HuggingFace. China users: set HF_ENDPOINT to https://hf-mirror.com for faster downloads. Requires NVIDIA GPU with driver 550+.</Overview>
   <Category>Productivity: Tools:</Category>
   <WebUI>http://[IP]:[PORT:8000]/docs</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/hsiang-han/unraid_templates/main/templates/qwen3-asr-api.xml</TemplateURL>
@@ -21,6 +21,8 @@
   <Config Name="Model Cache" Target="/root/.cache/huggingface" Default="/mnt/user/appdata/qwen3-asr-api/models" Mode="rw" Description="Model download cache. Persists across container recreates (~1-3GB)." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/qwen3-asr-api/models</Config>
 
   <Config Name="Model ID" Target="MODEL_ID" Default="Qwen/Qwen3-ASR-0.6B" Mode="" Description="Qwen/Qwen3-ASR-0.6B (fast, ~2-3GB VRAM) or Qwen/Qwen3-ASR-1.7B (accurate, ~4-6GB VRAM). Restart required after change." Type="Variable" Display="always" Required="true" Mask="false">Qwen/Qwen3-ASR-0.6B</Config>
+
+  <Config Name="HuggingFace Endpoint" Target="HF_ENDPOINT" Default="https://huggingface.co" Mode="" Description="HuggingFace download endpoint. China users: change to https://hf-mirror.com for faster downloads." Type="Variable" Display="always" Required="false" Mask="false">https://huggingface.co</Config>
 
   <Config Name="GPU Memory Utilization" Target="GPU_MEMORY_UTILIZATION" Default="0.8" Mode="" Description="Fraction of GPU memory to allocate (0.0-1.0). Lower if sharing GPU with other containers." Type="Variable" Display="always" Required="false" Mask="false">0.8</Config>
 

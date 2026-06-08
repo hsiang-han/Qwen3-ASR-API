@@ -13,6 +13,7 @@ services:
     environment:
       - MODEL_ID=Qwen/Qwen3-ASR-0.6B
       - GPU_MEMORY_UTILIZATION=0.8
+      - HF_ENDPOINT=https://huggingface.co
     shm_size: "4gb"
     deploy:
       resources:
