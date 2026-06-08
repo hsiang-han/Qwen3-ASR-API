@@ -8,7 +8,7 @@ No extra services, no NGINX, no voiceprint database — just the model served vi
 
 ## What this adds
 
-The official `qwenllm/qwen3-asr` Docker image has no entrypoint (drops to interactive shell). This wrapper adds:
+The official `qwenllm/qwen3-asr` Docker image has no entrypoint (drops to interactive shell), making it unusable on platforms like Unraid. This project adds an entrypoint for out-of-the-box usage, compatible with any Docker environment:
 - Auto-start `qwen-asr-serve` on container launch
 - Environment variable for model switching (no rebuild needed)
 - GPU memory control via env var
