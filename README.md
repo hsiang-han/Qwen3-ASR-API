@@ -66,6 +66,7 @@ Switch by changing `MODEL_ID` env var and restarting container.
 |----------|---------|-------------|
 | `MODEL_ID` | `Qwen/Qwen3-ASR-0.6B` | Model to serve |
 | `GPU_MEMORY_UTILIZATION` | `0.8` | GPU memory fraction (0.0-1.0) |
+| `MAX_MODEL_LEN` | `8192` | Max sequence length for KV cache. Default supports ~10 min audio. Lower to save VRAM, raise for longer audio. |
 | `HOST` | `0.0.0.0` | Bind address |
 | `PORT` | `80` | Container port |
 
